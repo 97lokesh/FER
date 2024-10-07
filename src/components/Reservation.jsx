@@ -17,8 +17,8 @@ const Reservation = () => {
   const handleReservation = async (e) => {
     e.preventDefault();
     try {
-      const { data } = await axios.post(
-        "http://localhost:4000/reservation/send",
+      const data = await axios.post(
+        "https://ber-74t1.onrender.com/reservation/send",
         { firstName, lastName, email, phone, date, time },
         {
           headers: {
@@ -30,7 +30,7 @@ const Reservation = () => {
       toast.success(data.message);
       setFirstName("");
       setLastName("");
-      setPhone(0);
+      setPhone();
       setEmail("");
       setTime("");
       setDate("");
